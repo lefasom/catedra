@@ -33,24 +33,33 @@ const FullscreenVideo = ({ data }) => {
             )} */}
             {/* Mostrar los videos */}
             <div className={`grid grid-cols-3 max-sm:grid-cols-1 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-                {data.map(({ id, src, title, description }) => (
-                    <div key={id} className="flex flex-col  p-6">
-                        <iframe
-                            src={src}
-                            width="100%"
-                            height="220"
-                            allowFullScreen
-                            title={`Video ${id}`}
-                            className="rounded-lg"
-                        />
-                        <h3 className="text-left pl-4 pt-2 font-sans text-[16px]" style={{color:"#F1F1F1"}}>
-                            {title}
-                        </h3>
-                        <p className="text-left pl-4 pb-2 text-[14px]" style={{color:"#AAAAAA"}}>
-                            {description}
-                        </p>
-                    </div>
-                ))}
+                {data.length != 0 ?
+                    
+                        data.map(({ id, src, title, description }) => (
+                            <div key={id} className="flex flex-col  p-6">
+                                <iframe
+                                    src={src}
+                                    width="100%"
+                                    height="220"
+                                    allowFullScreen
+                                    title={`Video ${id}`}
+                                    className="rounded-lg"
+                                />
+                                <h3 className="text-left pl-4 pt-2 font-sans text-[16px]" style={{ color: "#F1F1F1" }}>
+                                    {title}
+                                </h3>
+                                <p className="text-left pl-4 pb-2 text-[14px]" style={{ color: "#AAAAAA" }}>
+                                    {description}
+                                </p>
+                            </div>
+                        ))
+                    
+                    :
+                    <h5
+                        className="text-slate-50"
+                    >No hay coincidencias</h5>
+                }
+
             </div>
         </div>
     );
