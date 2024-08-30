@@ -6,7 +6,7 @@ function Menu() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-    const [isOpenLeft, setIsOpenLeft] = useState(false);
+    const [isOpenLeft, setIsOpenLeft] = useState(true);
 
     const toggleMenuLeft = () => {
         setIsOpenLeft(!isOpenLeft);
