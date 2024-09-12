@@ -2,10 +2,10 @@
 export const videos = [
     {
         id: 1,
-        src: "https://drive.google.com/file/d/1yWaUj6oitRIM_M1PMN7eTloO77eihHel/preview",
+        src: "https://drive.google.com/file/d/1_kbDzwv2gOP_7BM_SOZfoQHjeIl3AY8n/preview",
         title: "Introducción a la Cinemática",
         description: "U1 - E(1,2,3)",
-        subject: "Fisica 1",
+        subject: "Fisica",
     },
     {
         id: 2,

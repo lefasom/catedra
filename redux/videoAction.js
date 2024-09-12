@@ -1,0 +1,47 @@
+import { addDoc, collection, deleteDoc, doc, getDocs } from "@firebase/firestore";
+import { db } from "../db/firebase";
+import { current_videos } from "./videoSlice";
+
+export function delete_video(id) {
+    return async () => {
+        try {
+            await deleteDoc(doc(db, 'video', id));
+            console.log("video eliminado id : ", id);
+        } catch (error) {
+            // Manejar cualquier error que ocurra durante la eliminación del documento
+            console.error("Error al eliminar el documento:", error);
+        }
+    };
+}
+
+export function get_video() {
+    return async (dispatch) => {
+        try {
+            const querySnapshot = await getDocs(collection(db, 'video'));
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+                docs.push({ ...doc.data(), id: doc.id })
+            })
+            dispatch(current_videos(docs));
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export function add_video({ src, description, title, category }) {
+    return async () => {
+        try {
+            await addDoc(collection(db, 'video'),
+                {
+                    src, description, title, category 
+                }
+            )
+        } catch (error) {
+            // Manejar cualquier error que ocurra durante la eliminación del documento
+            console.error("Error al eliminar el documento:", error);
+        }
+    };
+}
+
+

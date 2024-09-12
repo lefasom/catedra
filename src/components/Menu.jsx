@@ -74,59 +74,6 @@ function Menu({ setSelectedUnit }) {
                     </select>
                 </div>
 
-                <ul className='text-start pt-2'>
-                    <li className="flex text-start mb-2">
-                        <a target="_blank" href="https://drive.google.com/drive/u/1/folders/1cvO-UxEW-C0yhz3cyaA_zFhEISjyGKjM" className="flex text-slate-200 hover:text-yellow-200">
-                            <span className="pr-1 text-slate-600 material-symbols-outlined">
-                                folder
-                            </span>
-                            <p>Drive de Física</p>
-                        </a>
-                    </li>
-                </ul>
-
-                <div className='flex justify-start'>
-                    <h3 className='pr-2 text-slate-400'>Física Unidades:</h3>
-                    <select>
-                        <option value="">Todas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                </div>
-
-                <ul className='text-start pt-2'>
-                    <li className="flex text-start mb-2">
-                        <a target="_blank" href="https://drive.google.com/drive/u/1/folders/1cvO-UxEW-C0yhz3cyaA_zFhEISjyGKjM" className="flex text-slate-200 hover:text-yellow-200">
-                            <span className="pr-1 text-slate-600 material-symbols-outlined">
-                                folder
-                            </span>
-                            <p>Drive de AM1</p>
-                        </a>
-                    </li>
-                </ul>
-
-                <div className='flex justify-start'>
-                    <h3 className='pr-2 text-slate-400'>AM1 Unidades:</h3>
-                    <select>
-                        <option value="">Todas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                </div>
             </div>
 
             {/* Menú izquierdo para agregar elementos */}
@@ -142,7 +89,7 @@ function Menu({ setSelectedUnit }) {
                 </span>
 
                 {/* FORMULARIO */}
-                <form className="relative top-7 w-5/6 mx-auto bg-black bg-opacity-55 p-2 border rounded-lg shadow-md">
+                <form className="relative top-7 w-5/6 mx-auto bg-black bg-opacity-55 p-2 rounded-lg shadow-md">
                     <div className="mb-4">
                         <label htmlFor="url" className="block text-sm font-medium text-gray-300 mb-1">URL</label>
                         <input type="url" id="url" name="url" className="w-full px-3 py-2 bg-slate-700 text-gray-300 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com" required />
