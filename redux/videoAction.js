@@ -1,12 +1,14 @@
 import { addDoc, collection, deleteDoc, doc, getDocs } from "@firebase/firestore";
 import { db } from "../db/firebase";
-import { current_videos } from "./videoSlice";
+import { current_videos, delete_videos } from "./videoSlice";
 
-export function delete_video(id) {
-    return async () => {
+export function delete_video({id}) {
+    return async (dispatch) => {
         try {
             await deleteDoc(doc(db, 'video', id));
             console.log("video eliminado id : ", id);
+            dispatch(delete_videos(id))
+
         } catch (error) {
             // Manejar cualquier error que ocurra durante la eliminación del documento
             console.error("Error al eliminar el documento:", error);

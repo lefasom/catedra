@@ -1,11 +1,17 @@
-import { delete_video, get_video } from "../../redux/videoAction";
+import { delete_video } from "../../redux/videoAction";
 import { useDispatch } from "react-redux";
+import Min_menu from "./Min_menu";
+import { useState } from "react";
+
 const FullscreenVideo = ({ data }) => {
+const [stateMin, setStateMin] = useState(false);
+
+
+
 const dispatch = useDispatch()
-    const deleteVideo = (id) =>{
+    const deleteVideo = ({id}) =>{
         console.log(id)
-        // dispatch(delete_video(id))
-        // dispatch(get_video)
+        dispatch(delete_video({id}))
     } 
     return (
         <div className="">
@@ -15,7 +21,7 @@ const dispatch = useDispatch()
 
                     data.map(({ id, src, title, description }) => (
                         <div key={id}
-                            className="flex flex-col p-6 m-2 bg-slate-700 bg-opacity-45 hover:bg-orange-500 hover:bg-opacity-45">
+                            className="flex flex-col p-6 m-2 bg-slate-700 bg-opacity-45 ">
                             <span
                                 className="
                             material-symbols-outlined
@@ -25,7 +31,8 @@ const dispatch = useDispatch()
                            right-[-95%]
                             text-slate-50
                             cursor-pointer
-                            ">
+                            "
+                            onClick={() => stateMin(setStateMin(!stateMin))}>
                                 more_horiz
                             </span>
                             <h3 className="text-left pl-4 pt-2 font-sans text-[16px]" style={{ color: "#F1F1F1" }}>
@@ -34,29 +41,8 @@ const dispatch = useDispatch()
                             <p className="text-left pl-4 pb-2 text-[14px]" style={{ color: "#AAAAAA" }}>
                                 {description}
                             </p>
-                            <div>
-                                <a
-                                    href={src}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                className="cursor-pointer"    
-                                >
-                                    <span className="material-symbols-outlined
-                                text-stone-50
-                                    
-                                    ">
-                                        link
-                                    </span>
-                                </a>
-                                <span className="material-symbols-outlined
-                                cursor-pointer
-                                text-stone-50
-                                "
-                                onClick={deleteVideo(id)}
-                                >
-                                    delete_forever
-                                </span>
-                            </div>
+                           
+                            <Min_menu stateMin={stateMin} deleteVideo={deleteVideo} id={id} src={src}/> 
 
                         </div>
                     ))
