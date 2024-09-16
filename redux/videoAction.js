@@ -29,12 +29,12 @@ export function get_video() {
     }
 }
 
-export function add_video({ src, description, title, category }) {
+export function add_video({ url, description, title}) {
     return async () => {
         try {
             await addDoc(collection(db, 'video'),
                 {
-                    src, description, title, category 
+                    url, description, title
                 }
             )
         } catch (error) {

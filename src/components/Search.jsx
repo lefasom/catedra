@@ -10,15 +10,15 @@ const Search = ({ inputValue, setInputValue, onSearch }) => {
                     flex ">
                 <input
                     className="
-              bg-black bg-opacity-30
-                rounded-l-full
-                p-1 
-                pl-3 
-                pr-3
-            border border-gray-700 focus:border-blue-600
-            outline-none
-            text-slate-100
-                "
+                  bg-black bg-opacity-30
+                    rounded-l-full
+                    p-1 
+                    pl-3 
+                    pr-3
+                    border border-gray-700 focus:border-blue-600
+                    outline-none
+                  text-slate-100
+                    "
                     value={inputValue}
                     onChange={handleInputChange}
                     style={{ inp: "none" }}
@@ -26,18 +26,19 @@ const Search = ({ inputValue, setInputValue, onSearch }) => {
                     placeholder="Buscar"
                 />
 
-                <span className="
+                <span
+                    className="
                 cursor-pointer
-                                    rounded-r-full 
+                rounded-r-full 
                 p-1 
                 pl-3 
                 pr-3
                 border
                 border-gray-700
                 text-slate-200
-                    material-symbols-outlined
-                    bg-gray-700
-                    "
+                material-symbols-outlined
+              bg-gray-700
+                "
                     onClick={onSearch}
                 >
                     search

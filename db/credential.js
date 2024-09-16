@@ -1,1 +1,0 @@
-export const credential ="AIzaSyC5byHjv4_2tqdGem33IConJDV401UDdJ0"

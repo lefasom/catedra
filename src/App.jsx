@@ -22,7 +22,7 @@ function App() {
   }
 
   // Filtrar los videos basado en el estado del filtro y la unidad seleccionada
-  const filteredVideos = videos.filter(video =>
+  const filteredVideos = array.filter(video =>
     video.title.toLowerCase().includes(filter.toLowerCase()) &&
     video.description.toLowerCase().includes(selectedUnit.toLowerCase())
   );
